@@ -1,0 +1,29 @@
+name: kStrikes
+version: '1.0.0'
+main: ro.kmagic.kstrikes.Strikes
+api-version: '1.20'
+authors: [ kMagic ]
+description: Strikes System for Play
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  strike:
+    aliases: [ strikes ]
+    description: Main command for kStrikes
+
+permissions:
+  strikes.strikes:
+    description: See how many strikes you have
+  strikes.strikes.others:
+    description: See how many strikes others have
+  strikes.help:
+    description: See the help message
+  strikes.admin.add:
+    description: Permission to add points to players
+  strikes.admin.remove:
+    description: Permission to remove points from players
+  strikes.admin.set:
+    description: Permission to set points of players
+  strikes.admin.reload:
+    description: Permission to reload the plugin

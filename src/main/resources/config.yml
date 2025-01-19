@@ -1,0 +1,43 @@
+options:
+  # enable the messages prefix
+  prefix-enabled: true
+
+messages:
+  prefix: "&c&lStrikes &8| &f"
+  invalid-command: "&cThe command you executed is invalid."
+  no-permission: "&cYou don't have permission to use this command."
+  no-player: "&cYou need to provide a player name!"
+  player-does-not-exist: "&cThe player you provided does not exist!"
+  player-is-not-online: "&cThe player you provided is not online!"
+  player-no-island: "&cThe player doesn't have an island!"
+  no-amount: "&cYou need to provide an amount of points!"
+  too-many-args: "&cToo many arguments!"
+  # points commands
+  add-points: "&aAdded &c{strikes} strikes &ato {player}."
+  remove-points: "&aRemoved &c{strikes} strikes &ato {player}."
+  set-points: "&aSet {player}'s points to &c{strikes} strikes."
+  strikes: "&fCurrently you have {player} strikes, and your island has {island} strikes."
+
+# {island} will be replaced with the island's name
+# this placeholder will only work if the player is offline
+# if the player is offline, papi placeholders will not work
+# the player needs to have an island for these actions to be executed
+actions:
+  5:
+    - "[msg] &c&lStrikes &8 &fYou got to 5 strikes! Punishments will apply!"
+    - "kill %player_name%"
+  10:
+    - "[msg] &c&lStrikes &8 &fYou got to 10 strikes! Punishments will apply!"
+    - "kill %player_name%"
+    - "[reset-player]"
+    - "[reset-island]"
+
+
+database:
+  type: "sqlite"
+  hostname: "localhost"
+  port: "3306"
+  database: "kstrikes"
+  username: "kstrikes"
+  password: "kstrikes"
+  table-prefix: "kstrikes_"
